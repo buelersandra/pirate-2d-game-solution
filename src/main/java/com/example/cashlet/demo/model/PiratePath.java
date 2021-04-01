@@ -1,12 +1,13 @@
 package com.example.cashlet.demo.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PiratePath{
-    public ArrayList<int[]> path;
+    public List<ArrayList<Integer>> path;
     public int coins;
 
-    public PiratePath(ArrayList<int[]> path,int coins){
+    public PiratePath(ArrayList<ArrayList<Integer>> path,int coins){
         this.path = path;
         this.coins = coins;
     }

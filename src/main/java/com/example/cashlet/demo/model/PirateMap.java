@@ -1,5 +1,6 @@
 package com.example.cashlet.demo.model;
 
+import java.beans.Transient;
 import java.util.Optional;
 
 public class PirateMap{
@@ -22,6 +23,14 @@ public class PirateMap{
     public Object getAmount() {
         return amount.isPresent() ? amount.get() : null;
     }
+
+    @Transient
+    public int getAmountValue(){
+        int r = getAmount() != null ? (Integer)getAmount() : this.type.equalsIgnoreCase("bomb")  ? 0 : 0;
+        System.out.println(this.type +" ," + r);
+        return r;
+    }
+    
 
     public void setAmount(Optional<Object> amount) {
         this.amount = amount;

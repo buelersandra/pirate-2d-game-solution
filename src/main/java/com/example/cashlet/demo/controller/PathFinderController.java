@@ -1,5 +1,6 @@
-package com.example.cashlet.demo;
+package com.example.cashlet.demo.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.cashlet.demo.model.PiratePath;
@@ -26,8 +27,11 @@ public class PathFinderController{
     @Autowired
     PathFinderService service;
 
+    private List<List<PirateMap>> map = new ArrayList<>();
+
     @RequestMapping(path="map",method = RequestMethod.POST)
-	public ResponseEntity<List<List<PirateMap>>> map(@RequestBody List<List<PirateMap>> list){   
+	public ResponseEntity<List<List<PirateMap>>> mapData(@RequestBody List<List<PirateMap>> list){   
+        this.map = list;
         return new ResponseEntity<List<List<PirateMap>>>(list,HttpStatus.OK);
 	}
 
@@ -38,7 +42,7 @@ public class PathFinderController{
     @RequestParam int targetYPosition)
 	{   
 		
-        PiratePath path = service.findPath(new int[0][0], startXPosition, startYPosition, targetXPosition, targetYPosition);
+        PiratePath path = service.findPath(map, startXPosition, startYPosition, targetXPosition, targetYPosition);
         if(path.coins == 0){
             return new ResponseEntity<PiratePath>(HttpStatus.NOT_FOUND);
 
