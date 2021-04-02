@@ -9,8 +9,8 @@
 
 REST method paths example
 1. `POST /map` 
-    -   To submit a 2d map of PirateMap(type:String,amount:Optional<Object>)
+      To submit a 2d map of PirateMap(type:String,amount:Optional<Object>)
 
-    
+
 2. `GET /findPath?=startXPosition=0&startYPosition=0&targetXPosition=3&targetYPosition=3` 
-    -   Returns the path taken to collect as much treasure possible. PiratePath(path: List<List<Integer>>, coins: int)
+        Returns the path taken to collect as much treasure possible. PiratePath(path: List<List<Integer>>, coins: int)
