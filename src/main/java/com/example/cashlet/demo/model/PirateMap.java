@@ -26,9 +26,9 @@ public class PirateMap{
 
     @Transient
     public int getAmountValue(){
-        int r = getAmount() != null ? (Integer)getAmount() : this.type.equalsIgnoreCase("bomb")  ? 0 : 0;
-        System.out.println(this.type +" ," + r);
-        return r;
+        return getAmount() != null ? (Integer)getAmount() : this.type.equalsIgnoreCase("bomb")  ? 0 : 0;
+        // System.out.println(this.type +" ," + r);
+        // return r;
     }
     
 
